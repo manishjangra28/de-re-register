@@ -2,9 +2,10 @@
 
 # Define variables
 REGION="ap-south-1"
-TARGET_GROUP_ARN="$1"
-TAG_KEY="$2"
-TAG_VALUE="$3"
+
+TAG_KEY="$1"
+TAG_VALUE="$2"
+TARGET_GROUP_ARN="$3"
 # Function to log messages
 log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S'): $1"
