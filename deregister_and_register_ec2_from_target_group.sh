@@ -2,8 +2,9 @@
 
 # Define variables
 REGION="ap-south-1"
-TARGET_GROUP_ARN="arn:aws:elasticloadbalancing:ap-south-1:992382494182:targetgroup/test1/a8abcf9d7e4d98e5"
-
+TARGET_GROUP_ARN="$1"
+TAG_KEY="$2"
+TAG_VALUE="$3"
 # Function to log messages
 log_message() {
     echo "$(date '+%Y-%m-%d %H:%M:%S'): $1"
@@ -26,8 +27,6 @@ fi
 log_message "Using Target Group ARN: $TARGET_GROUP_ARN"
 
 # Tag key and value for identifying instances
-TAG_KEY="env"
-TAG_VALUE="dev"
 
 # Function to deregister an instance
 deregister_instance() {
